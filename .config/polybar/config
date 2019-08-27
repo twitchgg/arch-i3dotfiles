@@ -1,0 +1,377 @@
+[bar/i3wmthemer_bar]
+monitor = HDMI-0
+width = 100%
+height = 20
+radius = 0
+fixed-center = false
+
+background = #1c1c22
+foreground = #d9d6ca
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Ubuntu Nerd Font Mono:style=Bold:size=10;3"
+font-1 = "STHeiti:size=10;1"
+font-2 = "Source Code Pro for Powerline:style=Bold:size=11;3"
+font-3 = "Noto Sans Symbols2:size=13;1"
+
+modules-center = 
+modules-left = i3
+modules-right = arrow7 updates-arch-combined arrow0 cpu arrow1 memory arrow2 network-traffic arrow3 spotify arrow4 arrow5 date weather arrow6 gmail login
+
+tray-position = right
+tray-background = #394357
+tray-padding = 1
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+
+ws-icon-0 = "1;"
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;聆"
+ws-icon-5 = "6;ﱘ"
+ws-icon-6 = "7;"
+ws-icon-7 = "8;"
+
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #dbe6f4
+label-mode-background = #dbe6f4
+
+label-focused = %index% %icon%
+label-focused-background = #cb4b16
+label-focused-foreground = #dbe6f4
+label-focused-padding = 1
+
+label-unfocused = %index% %icon%
+label-unfocused-background = #2b5278
+label-unfocused-foreground = #dbe6f4
+label-unfocused-padding = 1
+
+label-visible = %index% %icon%
+label-visible-background = #2b5278
+label-visible-foreground = #dbe6f4
+label-visible-padding = 1
+
+label-urgent = %index% %icon%
+label-urgent-background = #BA2922
+label-urgent-padding = 1
+
+enable-click = false
+format-font=3
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0b1
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #dbe6f4
+format-connected-background = #2b5278
+format-connected-padding = 2
+label-connected = %essid% %local_ip%
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #dbe6f4
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+format-connected-padding = 2
+format-connected-foreground = #dbe6f4
+format-connected-background = #2b5278
+format-connected-prefix = " "
+format-connected-prefix-foreground = #dbe6f4
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %m-%d"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = " "
+format-foreground = #1c1c22
+format-background = #8c9440
+format-padding-left = 1
+format-padding-right = 0
+
+label = %date% %time%
+label-font=3
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = #2b5278
+label-close =  cancel
+label-close-foreground = #2b5278
+label-separator = |
+label-separator-foreground = #2b5278
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = pkill -KILL -u $USER
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 2
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = ﱝ muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 墳
+ramp-volume-2 = 
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format-prefix-font=0
+format = <label>
+label-font=3
+
+exec = python /home/twitchgg/Public/polybar-spotify/spotify_status.py -f '{artist}: {song}'
+format-underline = #2b5278
+format-foreground = #dbe6f4
+format-background = #2b5278
+format-padding = 1
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label>
+
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = " %percentage%%"
+label-foreground = #dbe6f4
+label-background = #655faf
+label-font = 3
+label-padding = 1
+
+[module/memory]
+type = internal/memory
+
+interval = 3
+format = <label> 
+label =  %gb_used%/%gb_free%
+label-font = 3
+label-foreground = #dbe6f4
+label-background = #5f87af
+label-padding = 1
+
+[module/login]
+type = custom/text
+content = " TwitchGG %{B#394357 F#1c1c22}"
+content-foreground = #dbe6f4
+content-background = #394357
+content-padding = 1
+content-font = 3
+
+[module/gmail]
+type = custom/script
+exec = ~/Public/polybar-gmail/launch.py -p ""
+tail = true
+label-foreground = #dbe6f4
+label-background = #394357
+label-font = 3
+label-padding = 1
+
+[module/weather]
+type = custom/script
+exec = ~/Public/polybar-weather/openweathermap-detailed.sh
+interval = 600
+label-font = 3
+label-padding = 1
+label-foreground = #1c1c22
+label-background = #8c9440
+
+[module/network-traffic]
+type = custom/script
+exec = ~/Public/polybar-network-traffic/network-traffic.sh
+tail = true
+label-foreground = #dbe6f4
+label-background = #5f5f87
+label-font = 3
+label-padding = 1
+
+[module/arrowtitle]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #2b5278
+content-background = #1c1c22
+
+[module/arrow7]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #9d5faf
+content-background = #1c1c22
+
+[module/arrow0]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #655faf
+content-background = #9d5faf
+
+
+[module/arrow1]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #5f87af
+content-background = #655faf
+
+[module/arrow2]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #5f5f87
+content-background = #5f87af
+
+[module/arrow3]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #2b5278
+content-background = #5f5f87
+
+[module/arrow4]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #1c1c22
+content-background = #2b5278
+
+[module/arrow5]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #8c9440
+content-background = #1c1c22
+
+[module/arrow6]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #394357
+content-background = #8c9440
+
+[module/title]
+type = internal/xwindow
+
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/Public/polybar-network-update/updates-arch-combined.sh
+interval = 600
+label-font = 3
+label-padding = 1
+label-foreground = #dbe6f4
+label-background = #9d5faf
+
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0

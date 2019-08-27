@@ -1,0 +1,102 @@
+
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
+
+URxvt*font: xft:SauceCodePro Nerd Font Mono:bold:size=11.5,xft:WenQuanYi Micro Hei Mono Light: size=11.5,xft:Font Awesome 5 Free:size=11.5
+URxvt*boldFont:xft:SauceCodePro Nerd Font Mono:bold:size=11.5,xft:WenQuanYi Micro Hei Mono Light: size=11.5,xft:Font Awesome 5 Free:size=11.5
+URxvt*scrollBar:                  false
+URxvt*letterSpace: -1
+URxvt.cursorUnderline:      false
+URxvt.pointerBlank:         true
+
+URxvt*mouseWheelScrollPage:       false
+URxvt*cursorBlink:                true
+URxvt*saveLines:                  5000
+URxvt*internalBorder: 5
+URxvt*geometry: 70x19
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.perl-ext-common: default,selection-autotransform,keyboard-select,clipboard,resize-font
+
+URxvt.clipboard.autocopy: false
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+! URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+
+URxvt.keyboard-select.clipboard: true
+URxvt.keysym.M-s: perl:keyboard-select:activate
+URxvt.keysym.M-r: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+
+URxvt.url-select.underline: true
+URxvt.url-select.launcher: google-chrome-stable
+
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+Urxvt.inputMethod:fcitx
+
+rofi.color-enabled: true
+rofi.color-window: #1c1c22, #3e646f, #3e646f
+rofi.color-normal: #1c1c22, #d9d6ca, #85aab6, #d9d6ca, #78824B
+rofi.color-active: #1c1c22, #d9d6ca, #85aab6, #d9d6ca, #78824B
+rofi.color-urgent: #1c1c22, #d9d6ca, #85aab6, #d9d6ca, #78824B
+
+rofi.separator-style: solid
+rofi.sidebar-mode: false
+rofi.lines: 5
+rofi.font: SauceCodePro Nerd Font Mono Semibold 10.5
+rofi.bw: 1
+rofi.columns: 2
+rofi.padding: 5
+rofi.fixed-num-lines: true
+rofi.hide-scrollbar: true
+
+
+Xft.dpi: 96
+Xft.antialias: true      
+Xft.hinting: true
+Xft.rgba: rgb 
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
