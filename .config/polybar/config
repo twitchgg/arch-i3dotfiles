@@ -216,7 +216,7 @@ format-prefix-font=0
 format = <label>
 label-font=3
 
-exec = python /home/twitchgg/Public/polybar-spotify/spotify_status.py -f '{artist}: {song}'
+exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -f '{artist}: {song}'
 format-underline = #2b5278
 format-foreground = #dbe6f4
 format-background = #2b5278
@@ -267,7 +267,7 @@ content-font = 3
 
 [module/gmail]
 type = custom/script
-exec = ~/Public/polybar-gmail/launch.py -p ""
+exec = ~/.config/polybar/polybar-gmail/launch.py -p ""
 tail = true
 label-foreground = #dbe6f4
 label-background = #394357
@@ -276,7 +276,7 @@ label-padding = 1
 
 [module/weather]
 type = custom/script
-exec = ~/Public/polybar-weather/openweathermap-detailed.sh
+exec = ~/.config/polybar/polybar-weather/openweathermap-detailed.sh
 interval = 600
 label-font = 3
 label-padding = 1
@@ -285,7 +285,7 @@ label-background = #8c9440
 
 [module/network-traffic]
 type = custom/script
-exec = ~/Public/polybar-network-traffic/network-traffic.sh
+exec = ~/.config/polybar/polybar-network-traffic/network-traffic.sh
 tail = true
 label-foreground = #dbe6f4
 label-background = #5f5f87
@@ -360,12 +360,12 @@ content-background = #8c9440
 type = internal/xwindow
 format-font = 3
 format-padding = 1
-label-maxlen = 50
+label-maxlen = 60
 label-empty = Empty
 
 [module/updates-arch-combined]
 type = custom/script
-exec = ~/Public/polybar-network-update/updates-arch-combined.sh
+exec = ~/.config/polybar/polybar-network-update/updates-arch-combined.sh
 interval = 600
 label-font = 3
 label-padding = 1
