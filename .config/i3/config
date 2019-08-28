@@ -157,6 +157,7 @@ for_window [class="obs"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="PCManX"] floating enable
 for_window [class="Bettergram"] floating enable
+for_window [class="Lutris"] floating enable
 for_window [class="Slack"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="vlc"] floating enable
