@@ -27,7 +27,7 @@ font-3 = "Noto Sans Symbols2:size=13;1"
 
 modules-center = 
 modules-left = i3 title
-modules-right = arrow7 updates-arch-combined arrow0 cpu arrow1 memory arrow2 network-traffic arrow3 spotify arrow4 arrow5 date weather arrow6 gmail login
+modules-right = arrow7 updates-arch-combined arrow0 cpu arrow1 memory arrow2 network-traffic arrow3 spotify arrow4 arrow5 date weather arrow6 gmail login arrow8 pulseaudio arrow9
 
 tray-position = right
 tray-background = #394357
@@ -200,13 +200,18 @@ format-volume = <ramp-volume> <label-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = ﱝ muted
+label-muted = "ﱝ muted"
 label-muted-foreground = #666
 
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 = 
-ramp-volume-1 = 墳
-ramp-volume-2 = 
+ramp-volume-0 = ""
+ramp-volume-1 = "墳"
+ramp-volume-2 = ""
+label-volume-font = 3
+format-volume-font = 3
+ramp-volume-font = 3
+label-muted-font = 3
+format-volume-background = #2b5278
 
 [module/spotify]
 type = custom/script
@@ -259,7 +264,7 @@ label-padding = 1
 
 [module/login]
 type = custom/text
-content = " TwitchGG %{B#394357 F#1c1c22}"
+content = " TwitchGG %{B#394357 F#1c1c22}"
 content-foreground = #dbe6f4
 content-background = #394357
 content-padding = 1
@@ -355,6 +360,21 @@ content = " "
 content-font = 4
 content-foreground = #394357
 content-background = #8c9440
+
+[module/arrow8]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #2b5278
+content-background = #394357
+
+[module/arrow9]
+type = custom/text
+content = " "
+content-font = 4
+content-foreground = #394357
+content-background = #2b5278
+
 
 [module/title]
 type = internal/xwindow
