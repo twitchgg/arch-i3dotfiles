@@ -204,9 +204,9 @@ label-muted = " ﱝ muted"
 label-muted-foreground = #e57aff
 
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 = " "
-ramp-volume-1 = " 墳"
-ramp-volume-2 = " "
+ramp-volume-0 = " 奄"
+ramp-volume-1 = " 奔"
+ramp-volume-2 = " 墳"
 label-volume-font = 3
 format-volume-font = 3
 ramp-volume-font = 3
