@@ -27,7 +27,7 @@ font-3 = "Noto Sans Symbols2:size=13;1"
 
 modules-center = 
 modules-left = i3 title
-modules-right = arrow7 updates-arch-combined arrow0 cpu arrow1 memory arrow2 network-traffic arrow3 spotify arrow4 arrow5 date weather arrow6 gmail login arrow8 pulseaudio arrow9
+modules-right =  arrow7 updates-arch-combined arrow0 cpu arrow1 memory arrow2 network-traffic arrow3 spotify arrow4 arrow5 date weather arrow6 gmail login keyboard arrow8 pulseaudio arrow9
 
 tray-position = right
 tray-background = #394357
@@ -393,6 +393,22 @@ label-padding = 1
 label-foreground = #dbe6f4
 label-background = #9d5faf
 
+[module/keyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format = <label-indicator>
+
+label-indicator-on-capslock = "בּ "
+label-indicator-off-capslock = " " 
+label-indicator-on-capslock-background = #394357
+label-indicator-on-capslock-foreground = #c64357
+label-indicator-off-capslock-background = #394357
+label-indicator-off-capslock-foreground = #dbe6f4
+label-layout-foreground = #000
 
 [settings]
 screenchange-reload = true
